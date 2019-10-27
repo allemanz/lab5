@@ -16,8 +16,16 @@ $result = $mysqli->query("SELECT * from Users WHERE user_id = '$userid'");
 }
 else
 {
-  $mysqli->query("INSERT INTO Users (user_id) VALUES ('$userid')");
-  echo "User created.";
+  if($userid != "")
+  {
+    $mysqli->query("INSERT INTO Users (user_id) VALUES ('$userid')");
+    echo "User created.";
+  }
+  else
+  {
+    echo "User id field is blank.";
+  }
 }
+$mysqli->close();
 
  ?>
