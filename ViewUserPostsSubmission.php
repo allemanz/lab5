@@ -22,5 +22,5 @@ else
 {
   echo "No posts found from user id: " . $userid;
 }
-
+$mysqli->close();
 ?>

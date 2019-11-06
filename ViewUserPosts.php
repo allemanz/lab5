@@ -26,7 +26,7 @@ for($i = 1; $i <= $result->num_rows; $i++)
   echo '<option value="'.$row[user_id].'">'.$row[user_id].'</option>';
 }
 echo "</select>";
-
+$mysqli->close();
 ?>
 <br><br>
 <input type="submit" value="Submit">
