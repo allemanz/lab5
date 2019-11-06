@@ -8,7 +8,7 @@
 
 <h1>View User Posts</h1>
 </center>
-<form action="ViewUserPosts.php" method="POST">
+<form action="ViewUserPostsSubmission.php" method="POST">
 
 <?php
 $mysqli = new mysqli("mysql.eecs.ku.edu", "allemanz", "aim9ohLa", "allemanz");
@@ -17,12 +17,13 @@ if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
+
 $result = $mysqli->query("SELECT * from Users");
-echo "<select>";
+echo "<select name='userid' >";
 for($i = 1; $i <= $result->num_rows; $i++)
 {
   $row = $result->fetch_assoc();
-  echo "<option value=" . $row['user_id'] . " name='user'>" . $row["user_id"] . "</option>";
+  echo '<option value="'.$row[user_id].'">'.$row[user_id].'</option>';
 }
 echo "</select>";
 
